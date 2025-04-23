@@ -9,12 +9,48 @@
 <body>
     <div class="container">
         <h1>Мои делишки</h1>
-        <div class="input-button">
-            <input type="text" id="inputName" class="input-add" placeholder="Введите название дела">
-            <button id="buttonAdd" class="button-add">Добавить</button>
+        <div class="tabs">
+            <nav class="tabs__items">
+                <a href="#tab_01" class="tabs__item"><button data-tab="tab_01" class="tab-button active-button">Активные дела</button></a>
+                <a href="#tab_02" class="tabs__item"><button data-tab="tab_02" class="tab-button completed-button">Выполненные дела</button></a>
+                <a href="#tab_03" class="tabs__item"><button data-tab="tab_03" class="tab-button postpone-button">Отложенные дела</button></a>
+            </nav>
         </div>
-        <section class="section1" id="section1"></section>
+        <div class="tabs__body">
+
+            <div id="tab_01" class="tabs__block active__block" >
+                <div class="input-button">
+                    <input type="text" id="inputName" class="input-add" placeholder="Введите название дела">
+                    <button id="buttonAdd" class="button-add">Добавить</button>
+                </div>
+                <section class="section1" id="section1"></section>
+            </div>
+
+
+            <div id="tab_02" class="tabs__block completed__block">
+                <section class="section2" id="section2"></section>
+            </div>
+
+
+            <div id="tab_03" class="tabs__block postpone__block">
+                <section class="section3" id="section3"></section>
+            </div>
+        </div>
+        <div id="confirmModal" class="modal hidden">
+            <div class="modal-content">
+                <p>Вы уверены, что хотите удалить задачу?</p>
+                <div class="modal-buttons">
+                <button id="confirmYes" class="button-delete-yes">Да</button>
+                <button id="confirmNo" class="button-delete-no">Нет</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+
     <script src="main.js"></script>
 </body>
 </html>

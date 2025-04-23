@@ -17,7 +17,6 @@ h1,h2,h3,h5,h5,h6{font-size:inherit;font-weight: inherit;}
     text-align: center;
 }
 
-
 h1{
     margin-top: 30px;
     font-size: 40px;
@@ -28,13 +27,13 @@ h1{
     gap: 20px;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .input-add{
     padding: 20px;
     border: 1px solid black;
     border-radius: 50px;
-    margin: 30px 0px;
 }
 
 .button-add{
@@ -48,12 +47,12 @@ h1{
     transition: all 1s;
 }
 
-.section1 p{
+.section1 p, .section2 p, .section3 p{
     font-size: 20px;
     padding: 10px;
 }
 
-.section1{
+.section1, .section2, .section3{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -69,14 +68,27 @@ h1{
     padding: 10px;
 }
 
+.section-name{
+    white-space: nowrap;         
+    overflow: hidden;           
+    text-overflow: ellipsis;   
+    max-width: 18vw;
+    margin: 0 auto;
+}
+
 .name{
-    color: orange;
+    color: orange;    
 }
 
 .checkbox{
     height: 20px;
     width: 20px;
     accent-color: black;
+    cursor: pointer;
+}
+
+.checkbox:disabled {
+    cursor: not-allowed;
 }
 
 .section-completed{
@@ -86,9 +98,9 @@ h1{
 }
 
 .completed {
-    color: gray;
+    /* color: gray;
     filter: blur(1px);
-    opacity: 0.7;
+    opacity: 0.7; */
 }
 
 .section-deleted{
@@ -100,7 +112,97 @@ h1{
     width: 40%;
 }
 
+.section-postpone{
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid rgb(49, 15, 143);
+    border-radius: 50px;
+    background-color: #edd2fa;
+    width: 40%;
+}
+
 .section-deleted:hover{
     background-color: red;
     transition: all 1s;
+}
+
+.tabs__block{
+    display: none;
+}
+
+.tabs__block:target{
+    display: block;
+}
+
+.tab-button{
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 20px;
+    background-color: rgb(155, 201, 155);
+}
+
+/* Вспkывашка при удалении задачи */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+.modal-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+   
+.modal-buttons button {
+    margin: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+  
+.hidden {
+    display: none;
+}
+
+.button-delete-yes{
+    background-color: red;
+}
+
+.button-delete-no{
+    background-color: green;
+}
+
+/*  */
+
+body.active__block{
+    background-color: #FFFCF1;
+}
+
+.active-button{
+    background-color: #FFE8A3;
+}
+
+body.completed__block{
+    background-color: #f0fff0;
+}
+
+.completed-button{
+    background-color: #d7fad7;
+}
+
+body.postpone__block{
+    background-color: #FFF7F6;
+}
+
+.postpone-button{
+    background-color: #FFC7C2;
 }
